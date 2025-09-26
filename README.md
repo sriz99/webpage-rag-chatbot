@@ -3,7 +3,8 @@
 A simple **Retrieval-Augmented Generation (RAG)** application that lets you paste any webpage URL and interact with its content using natural language questions. The app uses **LangChain**, **Gemini embeddings/LLM**, and **ChromaDB** for document retrieval, with a clean **Streamlit** web interface.
 
 ---
-
+![Chatbot Screenshot](assets\rag_chat.png)
+---
 ## Features
 -  Load and index any webpage by providing its URL  
 -  Split webpage content into chunks for efficient retrieval  
