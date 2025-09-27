@@ -3,7 +3,7 @@
 A simple **Retrieval-Augmented Generation (RAG)** application that lets you paste any webpage URL and interact with its content using natural language questions. The app uses **LangChain**, **Gemini embeddings/LLM**, and **ChromaDB** for document retrieval, with a clean **Streamlit** web interface.
 
 ---
-![Chatbot Screenshot](assets\rag_chat.png)
+![Chatbot Screenshot](assets/rag_chat.png)
 ---
 ## Features
 -  Load and index any webpage by providing its URL  
@@ -46,7 +46,7 @@ cd webpage-rag-chatbot
 ### 2. Create and activate a virtual environment
 ```bash
 # Virtual Environment
-python -m rag_chatbot venv 
+python -m venv rag_chatbot 
 source rag_chatbot/bin/activate # On Linux
 rag_chatbot\Scripts\activate # On Windows
 ```
@@ -64,9 +64,28 @@ USER_AGENT=your_user_agent_here
 ```
 The Google API Key can generated from [Google AI Studio](https://aistudio.google.com/api-keys)
 
+**USER_AGENT** for the webpage loader (`WebBaseLoader`) to fetch content.  
+You can set this to a simple string that identifies your app, for example:
+
+```bash
+USER_AGENT=rag-webpage-chatbot/1.0
+```
+
+NOTE: Some websites may block requests without a user agent.
+If you face loading issues, try setting it to something like:
+
+```bash
+USER_AGENT=Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+```
 ### 5. Run the Application
 ```bash
 streamlit run app.py
 ```
-Then open the app in your browser at link generated in your terminal
+Then open the app in your browser at the link generated in your terminal (usually http://localhost:8501).
+
+## What this application does ? 
+
+- This app lets you enter any webpage URL and interact with its content through a chatbot interface.
+- It processes the webpage, stores the text in a vector database, and uses Retrieval-Augmented Generation (RAG) with Google Gemini to answer your questions.
+- Instead of reading the entire page, you can simply ask questions and get concise, context-aware answers.
 
